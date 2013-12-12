@@ -2,7 +2,6 @@ define(['core/Class'],function(Class){
 	
 	var BaseController = Class.extend({ 
 		$scope:null,  
-
 		init:function($scope){ 
 			this.$scope = $scope; 
 			this.defineListeners();

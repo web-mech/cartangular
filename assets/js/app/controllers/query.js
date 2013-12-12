@@ -5,15 +5,17 @@ define(['core/BaseController','core/Event'],function(BaseController,Event){
 		init:function($scope,AwsService){
 			this._super($scope);
 			this.service = AwsService;
-			this.$scope.filter = this.service.keywords.join(" ");
-			this.$scope.searchIndex = this.service.searchIndex;
+			this.$scope.filter = '';
+			this.$scope.searchIndex = '';
 			this.$scope.searchIndices = false;
 			this.$scope.onFilterChange = this.onFilterChange.bind(this);
 			this.$scope.onIndexChange = this.onIndexChange.bind(this);
-			Event.listen('aws.indices',this.onAwsIndices.bind(this));
+			Event.listen('aws.update',this.onAwsUpdate.bind(this));
 		},
-		onAwsIndices:function(event,context,data){
-			this.$scope.searchIndices = data;
+		onAwsUpdate:function(event,context,data){
+			this.$scope.searchIndices = data.indices;
+			this.$scope.filter = data.defaultFilter
+			this.$scope.searchIndex = data.defaultIndex;
 		},
 		onIndexChange:function(){
 			this.service.setIndex(this.$scope.searchIndex);

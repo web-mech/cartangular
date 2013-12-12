@@ -3,32 +3,35 @@ define(['angular','core/Class','core/Event','lodash','sprintf'],function(angular
 	
 	var AwsServiceClass = Class.extend({
 		http:false,
-		keywords:['Steven','King'],
-		searchIndex:'Books',
-		endpoint:'http://localhost:3000/aws/%s/%s?v=%s',
-		indexLocation:'assets/fixtures/searchIndices.json',
-		key:'AKIAJEOSMJSYLDKN74PQ',
+		keywords:[],
+		searchIndex:'',
+		endpoint:'',
+		config:'assets/config.json',
 		init:function($http){
 			this.$http = $http;
-			this.loadData();
-			this.loadIndexes();
+			this.loadConfig();
 		},
 		query:function(data){
 			if(data)
 				this.keywords = data.split(" ");
-
 			this.loadData();
 		},
 		setIndex:function(data){
 			this.searchIndex = data;
 		},
-		loadIndexes:function(){
-			this.$http.get(this.indexLocation).success(function(data){
-				Event.notify('aws.indices',this,data.indices);
+		loadConfig:function(){
+			this.$http.get(this.config).success(function(data){
+				this.keywords = data.defaultFilter.split(" ");
+				this.searchIndex = data.defaultIndex;
+				this.endpoint = data.awsEndpoint;
+
+				Event.notify('aws.update',this,data);
+
+				this.loadData();
 			}.bind(this));
 		},
 		loadData:function(){
-			var endpoint = sprintf( this.endpoint, this.keywords.join(','), this.searchIndex, Date.now() );
+			var endpoint = sprintf( this.endpoint, this.keywords.join(','), this.searchIndex );
 			this.$http.get(endpoint)
 				.success(this.successCallback.bind(this))
 				.error(this.errorCallback.bind(this));
