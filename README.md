@@ -1,4 +1,4 @@
 cartangular
 ===========
 
-A nice little cart app built with angularjs
+A nice little cart app built with angularjs.
