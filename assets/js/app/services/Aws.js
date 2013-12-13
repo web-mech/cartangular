@@ -45,7 +45,8 @@ define(['angular','core/Class','core/Event','lodash','sprintf'],function(angular
 				items = _.filter(items.children, function(item){ return item.name == 'Item'});
 				items = _.pluck(items,'children');
 				items = _.map(items,this.parseAWSItem.bind(this));
-			
+				items = _.filter(items,function(item){ return item.price !== false});
+
 			Event.notify('aws.data',this,items);
 		},
 		parseAWSItem:function(item){
