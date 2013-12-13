@@ -40,6 +40,7 @@ define(['angular','core/Class','core/Event','lodash','sprintf'],function(angular
 			this.parseAwsResponse(JSON.parse(data.content));
 		},
 		parseAwsResponse:function(data){
+			console.log(data)
 			var items = _.filter(data.children, function(child) { return child.name == 'Items'; })[0];
 				items = _.filter(items.children, function(item){ return item.name == 'Item'});
 				items = _.pluck(items,'children');

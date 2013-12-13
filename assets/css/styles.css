@@ -1,14 +1,16 @@
 body { padding-top: 50px; }
 
-.listing{
-	height: 550px;
-	overflow-y:scroll;
+
+.navbar-nav.navbar-right:last-child{
+	margin-right: 20px;
 }
+
 .btn-cart{
 	color:#999;
 	padding-top:10px;
 	cursor:pointer;
 }
+
 .btn-cart small{
 	display: block;
 }
@@ -28,14 +30,75 @@ body { padding-top: 50px; }
 	color:#fff;
 }
 
-.thumbnail > img{
+.listing{
+	height: 550px;
+	overflow-y:scroll;
+}
+
+.listing > .row > div {
+	transition: all 500ms ease;
+	-webkit-transition: all 500ms ease;
+}
+.listing .thumbnail{
+	position: relative;
+}
+
+.listing .thumbnail .cart-overlay{
+	position: absolute;
+	opacity: 0;
+	z-index: 20;
+	cursor: pointer;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	background-color: #000;
+	opacity: 0;
+	color:#fff;
+	font-size: 1.5em;
+	text-align: center;
+	transition: all 500ms ease;
+	-webkit-transition: all 500ms ease;
+}
+
+.listing .thumbnail .cart-overlay i{
+	display: block;
+	margin-top: 20px;
+	font-size: 5em;
+}
+
+.listing .thumbnail .cart-overlay:active i{
+	color: #00b6ff;
+	font-size: 5.1em;
+}
+
+.listing .thumbnail:hover .cart-overlay{
+	opacity: 0.6;
+}
+
+.listing .thumbnail > img{
 	height: 160px;
 	width: 160px;
+	display: inline-block;
+}
+.listing .thumbnail .caption{
+	display: inline-block;
+	vertical-align:top;
+	position: relative;
+	width:40%;
+	margin-top:0;
+	font-weight: bold;
+	color:#999;
+}
+
+.listing .thumbnail .caption .listing-price{
+	font-weight: normal;
+	color:#d73;	
 }
 
 .listing .thumbnail div.title{
 	overflow: hidden;
 	text-overflow:ellipsis;
-	white-space: nowrap;
 	width:100%;
 }
+
