@@ -1,12 +1,12 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-	
-		
-		<div class="navbar-header">
-	      <a href="#" class="navbar-brand">Shop</a>
+	<div class="row">
+
+		<div class="navbar-header col-md-1">
+	      <a href="#" class="navbar-brand">Shop.it</a>
 	    </div>
 	
-		<form class="navbar-form navbar-left" role="search" ng-controller="QueryController">
+		<form class="navbar-form navbar-left col-md-9" role="search" ng-controller="QueryController">
 	      <div class="form-group">
 	        <input type="text" class="form-control" placeholder="Search"  style="width:300px;" ng-model="filter" ng-keyup="onFilterChange(filter)" >
 	      </div>
@@ -15,23 +15,57 @@
 	      </div>
 	    </form>
 	
-		<ul class="nav navbar-nav navbar-right nav-cart" ng-controller="CartController">
-	      <li ng-click="cartClick()" ><i class="icon-cart2 btn-cart-ico"></i></li>
-	      <li ng-click="cartClick()" class="btn-cart">
-	      	<span>Your Cart</span>
-	      	<small>3 items totalling $60.00</small>
+		<ul class="nav navbar-nav navbar-right nav-cart col-md-3" ng-controller="CartController">
+	      <li ng-click="cartClick()" class="col-md-2"><i class="icon-cart2 btn-cart-ico"></i></li>
+	      <li class="col-md-10 btn-cart">
+	      	<span ng-click="cartClick()">Your Cart</span>
+	      	<small ng-click="cartClick()">{{list.length}} items totalling ${{totalFormatted}}</small>
+	      	<div class="cart-dropdown {{active}}">
+
+	      		<div class="cart-list">
+		      		<div class="row cart-item" ng-repeat="item in list">
+	      				<div class="col-md-2">
+	      					<img ng-src="{{item.thumbnail}}" />
+	      				</div>
+	      				<div class="col-md-4 cart-item-title">
+	      					{{item.attrs.Title}}
+	      				</div>
+	      				<div class="col-md-2">
+	      					{{item.price}}
+	      				</div>
+	      				<div class="col-md-2"  ng-click="removeItem(item)">
+	      					<i class="icon-close" ></i>
+	      				</div>
+		      		</div>
+	      		</div>
+
+	      		<div class="cart-summary">
+	      			<div class="row">
+	      				<div class="col-md-2">
+	      					Total
+	      				</div>
+	      				<div class="col-md-4">
+	      					
+	      				</div>
+	      				<div class="col-md-2">
+	      					${{totalFormatted}}
+	      				</div>
+	      				<div class="col-md-1">
+	      				</div>
+	      			</div>
+	      		</div>
+	      	</div>
 	      </li>
 	    </ul>
-	   
-    
+	</div>
 </nav>
 
 	<div class="well listing" ng-controller="ListingController">
 	    <div class="row">
 		     <div class="{{uiState}}">
-			  <div class="col-sm-6 col-md-4" ng-repeat="product in products">
+			  <div class="col-sm-6 col-lg-4" ng-repeat="product in products">
 			    <div class="thumbnail">
-			      <div class="cart-overlay">
+			      <div class="cart-overlay" ng-click="itemClicked(product)">
 			      	<i class="icon-cart2"></i>
 			      	Add To Cart
 			      </div>

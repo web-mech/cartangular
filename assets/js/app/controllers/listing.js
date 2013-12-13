@@ -3,12 +3,13 @@ define(['core/BaseController','core/Event'],function(BaseController,Event){
 	
 	var ListingController = BaseController.extend({
 		uiStates:{
-			collapsed:"col-md-10",
+			collapsed:"col-md-9",
 			expanded:"col-md-12"
 		},
 		init:function($scope,AwsService){
 			this._super($scope);
 			this.$scope.uiState = this.uiStates.expanded;
+			this.$scope.itemClicked = this.itemClicked.bind(this);
 		},
 		defineListeners:function(){
 			this._super();
@@ -27,6 +28,9 @@ define(['core/BaseController','core/Event'],function(BaseController,Event){
 			}else{
 				this.$scope.uiState = this.uiStates.expanded;
 			}
+		},
+		itemClicked:function(item){
+			Event.notify('list.item',this,item);
 		}
 	});
 

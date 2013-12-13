@@ -1,6 +1,6 @@
 {
 	"awsEndpoint":"http://localhost:3000/aws/%s/%s",
-	"defaultFilter": "Stephen King",
+	"defaultFilter": "Fast Furious",
 	"defaultIndex": "DVD",
 	"indices":["Apparel","Automotive","Books","DVD","Electronics","GourmetFood","Grocery","HealthPersonalCare","HomeGarden","Kitchen","Music","PCHardware","Shoes","Software","SportingGoods","Tools","Toys","VHS","VideoGames"]
 }
