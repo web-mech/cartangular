@@ -2,13 +2,13 @@ define(['core/Class'],function( Class ){
 	var CartModel = Class.extend({
 		init:function($scope){
 			this.$scope = $scope;
+			this.$scope.active = '';
 			this.$scope.list = [];
 			this.$scope.total = 0;
 			this.$scope.totalFormatted = '0.00';
-			Number.prototype.format = function(n, x) {
-			    var re = '(\\d)(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
-			    return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$1,');
-			};
+		},
+		toggleActive:function(){
+			this.$scope.active = this.$scope.active == '' ? 'active' : '';
 		},
 		indexOf:function(item){
 			for(var i =0;i<this.$scope.list.length; i++){

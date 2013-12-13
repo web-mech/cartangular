@@ -5,7 +5,6 @@ define(['jquery','core/BaseController','core/Event','models/Cart'],function($,Ba
 		activeClass:'active',
 		init:function($scope){
 			this._super($scope);
-			this.$scope.active = '';
 			this.model = new Cart(this.$scope);
 			this.$scope.cartClick = this.onCartBtnClick.bind(this);
 			this.$scope.removeItem = this.removeItem.bind(this);
@@ -22,7 +21,7 @@ define(['jquery','core/BaseController','core/Event','models/Cart'],function($,Ba
 		},
 		onCartBtnClick:function(){
 			Event.notify('cart.clicked',this,{});
-			this.$scope.active = this.$scope.active == '' ? 'active' : '';
+			this.model.toggleActive();
 		}
 	});
 

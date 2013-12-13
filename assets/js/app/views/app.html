@@ -27,7 +27,7 @@
 	      				<div class="col-md-2">
 	      					<img ng-src="{{item.thumbnail}}" />
 	      				</div>
-	      				<div class="col-md-4 cart-item-title">
+	      				<div class="col-md-6 cart-item-title">
 	      					{{item.attrs.Title}}
 	      				</div>
 	      				<div class="col-md-2">
@@ -44,13 +44,13 @@
 	      				<div class="col-md-2">
 	      					Total
 	      				</div>
-	      				<div class="col-md-4">
+	      				<div class="col-md-6">
 	      					
 	      				</div>
 	      				<div class="col-md-2">
 	      					${{totalFormatted}}
 	      				</div>
-	      				<div class="col-md-1">
+	      				<div class="col-md-2">
 	      				</div>
 	      			</div>
 	      		</div>
@@ -60,23 +60,23 @@
 	</div>
 </nav>
 
-	<div class="well listing" ng-controller="ListingController">
-	    <div class="row">
-		     <div class="{{uiState}}">
-			  <div class="col-sm-6 col-lg-4" ng-repeat="product in products">
-			    <div class="thumbnail">
-			      <div class="cart-overlay" ng-click="itemClicked(product)">
-			      	<i class="icon-cart2"></i>
-			      	Add To Cart
-			      </div>
-			      <img ng-src="{{product.thumbnail}}" alt="...">
-			      <div class="caption">
-			        <div class="title">{{product.attrs.Title}}</div>
-			        <p class="listing-price">{{product.price}}</p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
+<div class="well listing" ng-controller="ListingController">
+    <div class="row">
+	     <div class="{{uiState}}">
+		  <div class="col-sm-6 col-lg-4" ng-repeat="product in products">
+		    <div class="thumbnail">
+		      <div class="cart-overlay" ng-click="itemClicked(product)">
+		      	<i class="icon-cart2"></i>
+		      	Add To Cart
+		      </div>
+		      <img ng-src="{{product.thumbnail}}" alt="...">
+		      <div class="caption">
+		        <div class="title">{{product.attrs.Title}}</div>
+		        <p class="listing-price">{{product.price}}</p>
+		      </div>
+		    </div>
+		  </div>
 		</div>
+
 	</div>
+</div>

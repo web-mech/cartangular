@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en" ng-app>
   <head>
-    <link rel="stylesheet" href="/assets/js/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/assets/js/lib/bootstrap/dist/css/bootstrap-theme.min.css" />
-    <link rel="stylesheet" href="/assets/css/icons.css" />
-    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <base href="/assets/" target="_self">
+    <link rel="stylesheet" href="js/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="js/lib/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   </head>
   <body>
     <div ng-view></div>
-    <script type="text/javascript" src="/assets/js/lib/requirejs/require.js" data-main="assets/js/app"></script>
+    <script type="text/javascript" src="js/lib/requirejs/require.js" data-main="js/app"></script>
   </body>
 </html>

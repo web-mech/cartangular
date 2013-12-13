@@ -1,5 +1,5 @@
-requirejs.config({
-	baseUrl:'./js/lib/',
+({
+    baseUrl:'./assets/js/lib/',
 	paths:{
 		'jquery':'jquery/jquery.min',
 		'angular':'angular/angular',
@@ -14,21 +14,7 @@ requirejs.config({
 		'core':'../core',
 		'services':'../app/services'
 	},
-	shim:{
-		'angular' : {
-			'exports' : 'angular'
-		},
-		'angularRoute': ['angular'],
-        'angularMocks': {
-        	'deps':['angular'],
-        	'exports':'angular.mock'
-        },
-        'bootstrap':['jquery']
-	},
-	priority: ["angular"]
-});
-
-//http://code.angularjs.org/1.2.1/docs/guide/bootstrap#overview_deferred-bootstrap
-window.name = "NG_DEFER_BOOTSTRAP!";
-
-require(['app/bootstrap']);
+    //name: "../../../public/production/production",
+    name: "../app",
+    out: "public/js/app.js"
+})

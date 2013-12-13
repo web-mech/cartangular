@@ -6,7 +6,7 @@ define(['angular','core/Class','core/Event','lodash','sprintf'],function(angular
 		keywords:[],
 		searchIndex:'',
 		endpoint:'',
-		config:'assets/config.json',
+		config:'config.json',
 		init:function($http){
 			this.$http = $http;
 			this.loadConfig();

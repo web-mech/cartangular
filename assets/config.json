@@ -1,5 +1,5 @@
 {
-	"awsEndpoint":"http://localhost:3000/aws/%s/%s",
+	"awsEndpoint":"http://localhost:443/aws/%s/%s",
 	"defaultFilter": "Fast Furious",
 	"defaultIndex": "DVD",
 	"indices":["Apparel","Automotive","Books","DVD","Electronics","GourmetFood","Grocery","HealthPersonalCare","HomeGarden","Kitchen","Music","PCHardware","Shoes","Software","SportingGoods","Tools","Toys","VHS","VideoGames"]

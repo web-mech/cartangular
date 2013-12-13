@@ -1,4 +1,4 @@
-define(['angular','app/controllers/cart','app/controllers/listing','app/controllers/query','services/Aws'], function (angular, CartController, ListingController, QueryController) {
+define(['angular','app/controllers/Cart','app/controllers/Listing','app/controllers/Query','services/Aws'], function (angular, CartController, ListingController, QueryController) {
         'use strict';
 
         /* Controllers */
