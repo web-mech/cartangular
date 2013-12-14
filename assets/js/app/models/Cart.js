@@ -2,7 +2,10 @@ define(['core/Class','core/Event'],function( Class, Event ){
 	'use strict';
 	
 	var CartModel = Class.extend({
-		activeClass:'active',
+		activeClass:'active', //class name for toggling cart active state.
+		/**
+		 * Constructor
+		 */
 		init:function($scope){
 			this.$scope = $scope;
 			this.$scope.active = ''; //class name used for toggling the cart ui.
