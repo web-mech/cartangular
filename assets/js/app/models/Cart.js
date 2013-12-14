@@ -1,4 +1,6 @@
 define(['core/Class','core/Event'],function( Class, Event ){
+	'use strict';
+	
 	var CartModel = Class.extend({
 		activeClass:'active',
 		init:function($scope){

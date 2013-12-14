@@ -1,4 +1,6 @@
 define(['angular','core/Class','core/Event','lodash','sprintf'],function(angular,Class,Event,_){
+	'use strict';
+	
 	var AwsService = angular.module('app.AwsService',[]);
 	
 	var AwsServiceClass = Class.extend({
