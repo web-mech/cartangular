@@ -1,6 +1,6 @@
 {
-	"awsEndpoint":"http://localhost:443/aws/%s/%s",
-	"defaultFilter": "Fast Furious",
+	"awsEndpoint":"http://us-dev.net:443/aws/%s/%s",
+	"defaultFilter": "Lord of the Rings",
 	"defaultIndex": "DVD",
 	"indices":["Apparel","Automotive","Books","DVD","Electronics","GourmetFood","Grocery","HealthPersonalCare","HomeGarden","Kitchen","Music","PCHardware","Shoes","Software","SportingGoods","Tools","Toys","VHS","VideoGames"]
 }
