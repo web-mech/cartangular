@@ -51,9 +51,11 @@ body {
 }
 
 .listing{
-	height: 90%;
+	height:600px;
+	overflow-x:hidden;
 	overflow-y:scroll;
 	padding:10px;
+	padding-bottom: 51px;
 }
 
 .listing > .row > div {
